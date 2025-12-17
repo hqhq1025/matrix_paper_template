@@ -1,0 +1,133 @@
+% !TeX program = xelatex
+\def\thelstlisting{}
+
+%不需要区分奇偶页的请使用下面一行
+\documentclass[a4paper,AutoFakeBold,oneside,12pt]{book}
+%需要区分奇偶页的（即每一章第一页一定在奇数页上）请使用下面一行
+%\documentclass[a4paper,AutoFakeBold,openright,12pt]{book}
+\usepackage{BUPTthesisbachelor}
+\usepackage{setspace}
+
+% 标题区与正文区仅保留目录/标题框架；正文内容请自行填写
+\definecolor{linkblue}{RGB}{26,102,178}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=linkblue,
+  citecolor=linkblue,
+  urlcolor=linkblue
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%% Begin Documents %%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% 封面
+% 约定：封面 PDF 放到 `docs/cover.pdf`
+\blankmatter
+\includepdf[pages=-]{docs/cover.pdf}
+
+\input{main.cfg}    % Main items
+\include{abstract}  % Abstract
+
+% 目录
+\fancypagestyle{plain}{\pagestyle{frontmatter}}
+\frontmatter
+\tableofcontents
+
+% 正文
+\mainmatter
+\fancypagestyle{plain}{\pagestyle{mainmatter}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Main Area %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{引言}
+
+\section{背景介绍}
+\subsection{矩阵理论与方法介绍}
+\subsection{函数矩阵和矩阵函数介绍}
+\subsection{线性代数方程组求解介绍}
+
+\section{问题介绍}
+\subsection{矩阵函数的求法问题介绍}
+\subsection{矩阵分解的方法问题介绍}
+
+\section{上述问题国内外研究成果介绍}
+\subsection{矩阵函数的求法研究现状}
+\subsection{矩阵分解方法研究现状}
+
+\section{本论文工作简述}
+\subsection{本论文对上述问题研究简述}
+\subsection{本论文创新点或特点简述}
+\subsection{本论文撰写结构简述}
+
+\chapter{预备知识}
+
+\section{欧式空间与线性变换}
+\subsection{欧式空间与线性变换介绍}
+\subsection{若尔当标准形的求解}
+\subsection{欧式空间中线性变换的求法(解法参考课本例1.36和ppt)}
+
+\section{向量范数与矩阵范数}
+\subsection{向量范数介绍}
+\subsection{矩阵范数介绍}
+\subsection{矩阵可逆性条件、条件数和谱半径介绍}
+
+\section{矩阵函数介绍}
+\subsection{矩阵序列介绍}
+\subsection{矩阵级数介绍}
+\subsection{矩阵函数介绍 (参考课本3.3.1)}
+\subsection{函数矩阵对矩阵的导数}
+
+\chapter{矩阵函数的求法研究}
+
+\section{待定系数法}
+\subsection{待定系数法求矩阵函数的步骤推导}
+\subsection{举例详细展示求法}
+
+\section{数项级数求和法}
+\subsection{数项级数求和法求矩阵函数的步骤推导}
+\subsection{举例详细展示求法}
+
+\section{对角形法}
+\subsection{对角形法求矩阵函数的步骤推导}
+\subsection{举例详细展示求法}
+
+\section{若尔当标准形法}
+\subsection{若尔当标准形法求矩阵函数的步骤推导}
+\subsection{举例详细展示求法}
+
+\section{本章小节}
+
+\chapter{矩阵分解方法研究}
+
+\section{矩阵的LU分解}
+\subsection{矩阵LU分解的步骤推导}
+\subsection{举例详细展示求法}
+
+\section{矩阵的QR分解}
+\subsection{矩阵QR分解的步骤推导}
+\subsection{举例详细展示求法}
+
+\section{矩阵的满秩分解}
+\subsection{矩阵满秩分解的步骤推导}
+\subsection{举例详细展示求法}
+
+\section{矩阵的奇异值分解}
+\subsection{矩阵奇异值分解的步骤推导}
+\subsection{举例详细展示求法}
+
+\section{利用矩阵分解求矩阵广义逆}
+\subsection{矩阵广义逆介绍}
+\subsection{利用矩阵满秩分解求矩阵广义逆}
+\subsection{利用矩阵奇异值分解求矩阵广义逆}
+\subsection{举例详细展示求法}
+
+\section{本章小节}
+
+\chapter{总结}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% References %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage\phantomsection\addcontentsline{toc}{chapter}{参考文献}
+\bibliographystyle{buptbachelor}
+\refbodyfont{\bibliography{ref}}
+
+\end{document}
